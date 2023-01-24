@@ -3,7 +3,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 
 
-export default function HomePage(){
+export default function Home(){
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -17,7 +17,7 @@ export default function HomePage(){
     return(
         <Grid container spacing={3} align="center">
             <Grid item xs={12}>
-                <Typography variant="h3" component="h3">House Party</Typography>
+                <Typography variant="h3" component="h3">Music Party</Typography>
             </Grid>
             <Grid item xs={12}>
                 <ButtonGroup disableElevation variant="contained" color="primary" >
