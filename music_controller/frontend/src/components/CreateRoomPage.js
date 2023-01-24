@@ -1,10 +1,12 @@
 import {Button, Grid, Typography, TextField, FormHelperText, FormControl, Radio, RadioGroup, FormControlLabel} from "@mui/material"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import {useState} from "react"
+
 export default function CreateRoomPage(){
     const [guestsCanPause, setGuestsCanPause] = useState(true)
     const [votesToSkip, setVotesToSkip] = useState(2)
-
+    const navigate = useNavigate()
+    
     function handleCreateRoomButtonPressed(){
         const requestOptions={
             method: 'POST',
@@ -16,7 +18,9 @@ export default function CreateRoomPage(){
         };
         fetch('/api/create_room', requestOptions).then((response)=>{
             return response.json()
-        }).then((data)=> console.log(data))
+        }).then((data)=> {
+            navigate('/room/' + data.code);
+        })
     }
     return(
         <Grid container spacing={1}>
