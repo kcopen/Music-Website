@@ -37,7 +37,7 @@ export default function RoomJoinPage(){
             </Grid>
             <Grid item xs={12}>
                 <TextField 
-                    error={ error }
+                    error={ error ? true : false}
                     label="Code"
                     placeholder="Enter a room code."
                     value={ roomCode }

@@ -1,8 +1,18 @@
 import {Grid, Button, ButtonGroup, Typography} from "@mui/material";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useEffect} from "react";
+
 
 export default function HomePage(){
-    
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        fetch('/api/user_in_room').then((response)=>{
+            return response.json();
+        }).then((data)=>{
+            if(data.code) navigate(`/room/${data.code}`);
+        });
+    }, []);
 
     return(
         <Grid container spacing={3} align="center">
