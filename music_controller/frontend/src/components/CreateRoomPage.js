@@ -6,7 +6,7 @@ export default function CreateRoomPage(){
     const [guestsCanPause, setGuestsCanPause] = useState(true)
     const [votesToSkip, setVotesToSkip] = useState(2)
     const navigate = useNavigate()
-    
+
     function handleCreateRoomButtonPressed(){
         const requestOptions={
             method: 'POST',

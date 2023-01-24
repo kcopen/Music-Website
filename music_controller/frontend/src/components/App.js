@@ -14,6 +14,5 @@ export default function App(){
                 <Route path="/room/:roomCode" element={<Room />} />
             </Routes>
         </BrowserRouter>
-        
     );
 };
