@@ -99,13 +99,4 @@ export default function Room(){
     }
    
     return showSettings ? settings() : room()
-        
-            
-            
-            
-            
-        
-            
-         
-   
 }
